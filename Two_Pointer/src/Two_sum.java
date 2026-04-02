@@ -18,6 +18,7 @@ public class Two_sum {
         while (i < j) {
             int sum = arr[i] + arr[j];
             if (sum == target) {
+                // return new int[]{i , j}; --> for return index
                 return new int[]{arr[i], arr[j]};
             } else if (target > sum) {
                 i++;
