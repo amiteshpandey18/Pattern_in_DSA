@@ -6,6 +6,8 @@ public class RemoveDuplicate {
 
         // Remove duplicate from sorted Array
 
+        // For loop
+
         int[] arr = {1, 2, 3, 3, 4, 5};
         int left = 0;
 
@@ -16,6 +18,24 @@ public class RemoveDuplicate {
                 arr[left] = arr[right];
             }
         }
+
+        // Using While loop
+
+        /**
+         *     int left = 0;
+         *         int right = 1;
+         *         while(right < arr.length) {
+         *
+         *             if(arr[left] == arr[right]) {
+         *                 right++;
+         *                 continue;
+         *             }
+         *             left++;
+         *             arr[left] = arr[right];
+         *             right++;
+         *         }
+         *
+         */
 
         for (int i = 0; i <= left; i++) {
             System.out.print(arr[i] + " ");
