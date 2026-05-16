@@ -28,18 +28,43 @@ public class ValidPalindrome {
      */
 
     // with String
+    //  public static boolean validPalindrone(String str) {
+//
+//        int i = 0;
+//        int j = str.length() - 1;
+//
+//        while (i < j) {
+//            if (str.charAt(i) != str.charAt(j)) {
+//                return false;
+//            }
+//
+//            i++;
+//            j--;
+//        }
+//        return true;
+
+
+    // Best Solution
+
     public static boolean validPalindrone(String str) {
 
-        int i = 0;
-        int j = str.length() - 1;
+        int left = 0;
+        int right = str.length() - 1;
 
-        while (i < j) {
-            if (str.charAt(i) != str.charAt(j)) {
-                return false;
+        while (left < right) {
+            while (left < right && !Character.isLetterOrDigit(str.charAt(left))) {
+                left++;
             }
 
-            i++;
-            j--;
+            while (left < right && !Character.isLetterOrDigit(str.charAt(right))) {
+                right--;
+            }
+                if (Character.toLowerCase(str.charAt(left)) != Character.toLowerCase(str.charAt(right))) {
+                    return false;
+            }
+
+            left++;
+            right--;
         }
         return true;
     }
